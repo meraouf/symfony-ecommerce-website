@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter{% endblock %}
+
+{% block content %}
+    <h2>Nous contacter</h2>
+    <p>N'hésiter pas à prendre contact avec notre équipe, nous vous répondrons dans les meilleurs délais</p>
+    {% for message in app.flashes('notice') %}  <!-- va chercher les flashes de type 'notice' dans controller -->
+        <div class="alert alert-info"> {{ message }}</div>
+    {% endfor %}
+    <div class="row">
+        <div class="col-md-8">
+            {{ form(form) }}
+        </div>
+        <div class="col-md-4">
+            <strong>AbdoTools shop</strong>
+            <hr>
+            Tél:06.27.36.78.70<br>
+            Hamiz - Dar-el-Beida<br>
+            contact@abdotools.dz<br>
+        </div>
+    </div>
+
+{% endblock %}

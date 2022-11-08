@@ -1,0 +1,11 @@
+<div class="card">
+    <div class="card-img-top">
+        <img src="/abdotoolss/public/uploads/{{ product.illustration }}"                                                     alt="{{ product.name }}" class="img-fluid">
+    </div>
+    <div class="card-body text-center">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <h6 class="card-subtitle mb-2">{{ product.subtitle }}</h6>
+        <span class="product-price"> {{ (product.price /100)|number_format(2) }} Da</span>
+        <a class="card-link btn btn-warning" href="{{ path('product', {'slug':product.slug}) }}">Détail <i class="fas fa-arrow-right"></i></a>
+    </div
+</div>

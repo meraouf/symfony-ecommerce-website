@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ product.name }}{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <img src="/abdotoolss/public/uploads/{{product.illustration}}" alt="{{ product.name }}" class="img-fluid">
+        </div>
+        <div class="col-md-8 my-auto">
+            <h4 >{{ product.name }} </h4>
+            <p>{{ product.subtitle }}</p>
+            <span class="product-price"> {{ (product.price /100)|number_format(2) }} Da</span>
+            <hr>
+            <p>
+                {{ product.description }}
+            </p>
+            <a href="{{ path('add-to-cart' , {'id' :product.id}) }}" class="btn btn-primary"> Ajouter au panier</a>
+        </div>
+        <div>
+            <h1>Top des ventes</h1>
+            <p>les produits les plus vendu</p>
+            <div class="row">
+            {% for product in products %}
+                <div class="col-md-4">
+                    {% include 'product/single_product.html.twig' %}
+                </div><!-- /.col-lg-4 -->
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
